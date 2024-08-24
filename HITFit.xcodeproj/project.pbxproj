@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83E62EC2C7A92E00010C414 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E62EB2C7A92E00010C414 /* HeaderView.swift */; };
 		B8773F6A2C76CAD20058AC6F /* HITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8773F692C76CAD20058AC6F /* HITFitApp.swift */; };
 		B8773F6C2C76CAD20058AC6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8773F6B2C76CAD20058AC6F /* ContentView.swift */; };
 		B8773F6E2C76CAD20058AC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8773F6D2C76CAD20058AC6F /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B83E62EB2C7A92E00010C414 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B8773F662C76CAD20058AC6F /* HITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8773F692C76CAD20058AC6F /* HITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITFitApp.swift; sourceTree = "<group>"; };
 		B8773F6B2C76CAD20058AC6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				B8773F6B2C76CAD20058AC6F /* ContentView.swift */,
 				B8A87BD12C7A717200AEAD21 /* Exercise View.swift */,
+				B83E62EB2C7A92E00010C414 /* HeaderView.swift */,
 				B8A87BCF2C7A715800AEAD21 /* Welcome View.swift */,
 			);
 			path = Views;
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B83E62EC2C7A92E00010C414 /* HeaderView.swift in Sources */,
 				B8773F6C2C76CAD20058AC6F /* ContentView.swift in Sources */,
 				B8A87BD22C7A717200AEAD21 /* Exercise View.swift in Sources */,
 				B8773F6A2C76CAD20058AC6F /* HITFitApp.swift in Sources */,

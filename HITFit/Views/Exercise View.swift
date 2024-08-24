@@ -17,7 +17,14 @@ struct Exercise_View: View {
 
     var body: some View {
         //changed view text to be the exercise names at index
-        Text(exerciseNames[index])
+        VStack {
+            HeaderView(exerciseName: exerciseNames[index])
+        }
+        Text("Video Player")
+        Text("Timer")
+        Text("Start/Done Button")
+        Text("Rating")
+        Text("History button")
     }
 }
 

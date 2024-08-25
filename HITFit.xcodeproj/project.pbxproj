@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B802AB6C2C7B6E96004E7FD6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802AB6B2C7B6E96004E7FD6 /* HistoryView.swift */; };
+		B802AB6E2C7BAC52004E7FD6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802AB6D2C7BAC52004E7FD6 /* DateExtension.swift */; };
 		B83E62EC2C7A92E00010C414 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E62EB2C7A92E00010C414 /* HeaderView.swift */; };
 		B83E62EE2C7AAF060010C414 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E62ED2C7AAF060010C414 /* Exercise.swift */; };
 		B83E62F02C7AC57D0010C414 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E62EF2C7AC57D0010C414 /* RatingView.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B802AB6B2C7B6E96004E7FD6 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		B802AB6D2C7BAC52004E7FD6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = HITFit/Views/DateExtension.swift; sourceTree = "<group>"; };
 		B83E62EB2C7A92E00010C414 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B83E62ED2C7AAF060010C414 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Views/Exercise.swift; sourceTree = "<group>"; };
 		B83E62EF2C7AC57D0010C414 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = SOURCE_ROOT; };
@@ -55,6 +59,7 @@
 		B8773F5D2C76CAD10058AC6F = {
 			isa = PBXGroup;
 			children = (
+				B802AB6D2C7BAC52004E7FD6 /* DateExtension.swift */,
 				B8773F682C76CAD20058AC6F /* HITFit */,
 				B8773F672C76CAD20058AC6F /* Products */,
 			);
@@ -97,6 +102,7 @@
 			children = (
 				B83E62EF2C7AC57D0010C414 /* RatingView.swift */,
 				B8773F6B2C76CAD20058AC6F /* ContentView.swift */,
+				B802AB6B2C7B6E96004E7FD6 /* HistoryView.swift */,
 				B8A87BD12C7A717200AEAD21 /* Exercise View.swift */,
 				B83E62F12C7AC7CF0010C414 /* VideoPlayerView.swift */,
 				B83E62EB2C7A92E00010C414 /* HeaderView.swift */,
@@ -180,12 +186,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B83E62EC2C7A92E00010C414 /* HeaderView.swift in Sources */,
+				B802AB6E2C7BAC52004E7FD6 /* DateExtension.swift in Sources */,
 				B8773F6C2C76CAD20058AC6F /* ContentView.swift in Sources */,
 				B8A87BD22C7A717200AEAD21 /* Exercise View.swift in Sources */,
 				B8773F6A2C76CAD20058AC6F /* HITFitApp.swift in Sources */,
 				B8A87BD02C7A715800AEAD21 /* Welcome View.swift in Sources */,
 				B83E62EE2C7AAF060010C414 /* Exercise.swift in Sources */,
 				B83E62F02C7AC57D0010C414 /* RatingView.swift in Sources */,
+				B802AB6C2C7B6E96004E7FD6 /* HistoryView.swift in Sources */,
 				B83E62F22C7AC7CF0010C414 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,15 +13,19 @@ import SwiftUI
 //let exercise1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
 //let exercise2 = ["Squat", "Step Up", "Burpee"]
 
-let history = HistoryStore()
-
 struct HistoryView: View {
+    let history = HistoryStore()
+    @Binding var showHistory: Bool
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            Button(action: {}) {
+            Button(action: {
+                dismiss()
+            }) {
                 Image(systemName: "xmark.circle")
                     .font(.title)
-                    .padding(.trailing)
+                    .padding()
             }
             VStack {
                 Text("History")
@@ -45,5 +49,5 @@ struct HistoryView: View {
 }
 
 #Preview {
-    HistoryView()
+    HistoryView(showHistory: .constant(true))
 }

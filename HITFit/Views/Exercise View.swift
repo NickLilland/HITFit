@@ -13,6 +13,8 @@ struct Exercise_View: View {
     @Binding var selectedTab: Int
 
     @State private var rating = 0
+    @State private var showHistory = false
+    @State private var showSuccess = false
 
     //declared "index" is an integer
     let index: Int
@@ -29,7 +31,11 @@ struct Exercise_View: View {
     }
     var doneButton: some View {
         Button("Done") {
-            selectedTab = lastExercise ? 9 : selectedTab + 1
+            if lastExercise {
+                showSuccess.toggle()
+            } else {
+                selectedTab += 1
+            }
         }
     }
 
@@ -46,13 +52,22 @@ struct Exercise_View: View {
                 HStack(spacing: 150) {
                     startButton
                     doneButton
+                        .sheet(isPresented: $showSuccess) {
+                            SuccessView(selectedTab: $selectedTab)
+                                .presentationDetents([.medium, .large])
+                        }
                 }
                 .font(.title3)
                 .padding()
-                RatingView(rating: $rating)
+                RatingView(rating: $rating )
                     .padding()
                 Spacer()
-                Button("History") {}
+                Button("History") {
+                    showHistory.toggle()
+                }
+                .sheet(isPresented: $showHistory) {
+                    HistoryView(showHistory: $showHistory)
+                }
                     .padding(.bottom)
             }
         }
@@ -60,6 +75,6 @@ struct Exercise_View: View {
 }
 
 #Preview {
-    Exercise_View(selectedTab: .constant(1), index: 1)
+    Exercise_View(selectedTab: .constant(3), index: 3)
 }
 

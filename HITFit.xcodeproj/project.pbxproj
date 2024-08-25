@@ -26,6 +26,7 @@
 		B8B470F02C7BB5AF0064B5EC /* History Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B470EF2C7BB5AF0064B5EC /* History Store.swift */; };
 		B8B470F32C7BB8310064B5EC /* HistoryStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B470F22C7BB8310064B5EC /* HistoryStoreDevData.swift */; };
 		B8B470F72C7BCF3A0064B5EC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B470F62C7BCF3A0064B5EC /* ImageExtension.swift */; };
+		B8B470F92C7BD3960064B5EC /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B470F82C7BD3960064B5EC /* SuccessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B8B470EF2C7BB5AF0064B5EC /* History Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History Store.swift"; sourceTree = "<group>"; };
 		B8B470F22C7BB8310064B5EC /* HistoryStoreDevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStoreDevData.swift; sourceTree = "<group>"; };
 		B8B470F62C7BCF3A0064B5EC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		B8B470F82C7BD3960064B5EC /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				B83E62F12C7AC7CF0010C414 /* VideoPlayerView.swift */,
 				B83E62EB2C7A92E00010C414 /* HeaderView.swift */,
 				B8A87BCF2C7A715800AEAD21 /* Welcome View.swift */,
+				B8B470F82C7BD3960064B5EC /* SuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				B802AB6E2C7BAC52004E7FD6 /* DateExtension.swift in Sources */,
 				B8773F6C2C76CAD20058AC6F /* ContentView.swift in Sources */,
 				B8A87BD22C7A717200AEAD21 /* Exercise View.swift in Sources */,
+				B8B470F92C7BD3960064B5EC /* SuccessView.swift in Sources */,
 				B8773F6A2C76CAD20058AC6F /* HITFitApp.swift in Sources */,
 				B8A87BD02C7A715800AEAD21 /* Welcome View.swift in Sources */,
 				B83E62EE2C7AAF060010C414 /* Exercise.swift in Sources */,

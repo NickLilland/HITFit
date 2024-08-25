@@ -28,6 +28,16 @@ struct Welcome_View: View {
                         .resizedToFill(width: 240, height: 240)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                 }
+                Button(action: {}) {
+                    //                    Text("Get Started")
+                    //                    Image(systemName: "arrow.right.circle")
+                    Label("Get Started", systemImage: "arrow.right.circle")
+                }
+                .font(.title2)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.gray, lineWidth: 2))
             }
         }
     }

@@ -21,7 +21,7 @@ struct Exercise_View: View {
         //changed view text to be the exercise names at index
         GeometryReader { geometry in
             VStack {
-                HeaderView(exerciseName: exercise.exerciseName)
+                HeaderView(titleText: exercise.exerciseName)
                     .padding(.bottom)
                 VideoPlayerView(videoName: exercise.videoName)
                   .frame(height: geometry.size.height * 0.45)

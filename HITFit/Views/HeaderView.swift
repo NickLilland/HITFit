@@ -27,4 +27,6 @@ struct HeaderView: View {
 
 #Preview {
     HeaderView(exerciseName: "Squat")
+        .previewLayout(.sizeThatFits)
 }
+

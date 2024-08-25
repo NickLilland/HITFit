@@ -31,3 +31,4 @@ struct Exercise_View: View {
 #Preview {
     Exercise_View(index: 0)
 }
+

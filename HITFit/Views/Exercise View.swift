@@ -12,6 +12,8 @@ struct Exercise_View: View {
 
     @Binding var selectedTab: Int
 
+    @State private var rating = 0
+
     //declared "index" is an integer
     let index: Int
     let interval: TimeInterval = 30
@@ -35,7 +37,7 @@ struct Exercise_View: View {
         //changed view text to be the exercise names at index
         GeometryReader { geometry in
             VStack {
-                HeaderView(titleText: exercise.exerciseName)
+                HeaderView(selectedTab: $selectedTab, titleText: Exercise.exercises[index].exerciseName)
                     .padding(.bottom)
                 VideoPlayerView(videoName: exercise.videoName)
                   .frame(height: geometry.size.height * 0.45)
@@ -47,7 +49,7 @@ struct Exercise_View: View {
                 }
                 .font(.title3)
                 .padding()
-                RatingView()
+                RatingView(rating: $rating)
                     .padding()
                 Spacer()
                 Button("History") {}

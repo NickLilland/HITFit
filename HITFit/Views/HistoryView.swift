@@ -24,13 +24,17 @@ struct HistoryView: View {
                     header:
                         Text(today.formatted(as: "MMM d"))
                         .font(.headline)) {
-                            //Section Content
+                            ForEach(exercise1, id: \.self) {exercise in
+                                Text(exercise)
+                            }
                         }
                 Section(
                     header:
                         Text(yesterday.formatted(as: "MMM d"))
                         .font(.headline)) {
-                            //Section Content
+                            ForEach(exercise2, id: \.self) { exercise in
+                                Text(exercise)
+                            }
                         }
             }
         }

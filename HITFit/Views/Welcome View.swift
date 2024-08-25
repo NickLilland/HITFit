@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct Welcome_View: View {
+struct WelcomeView: View {
+
+    @Binding var selectedTab: Int
+
     var body: some View {
         ZStack {
             VStack {
@@ -26,9 +29,9 @@ struct Welcome_View: View {
                     }
                     Image("step-up")
                         .resizedToFill(width: 240, height: 240)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .clipShape(Circle())
                 }
-                Button(action: {}) {
+                Button(action: { selectedTab = 0 }) {
                     //                    Text("Get Started")
                     //                    Image(systemName: "arrow.right.circle")
                     Label("Get Started", systemImage: "arrow.right.circle")
@@ -44,5 +47,5 @@ struct Welcome_View: View {
 }
 
 #Preview {
-    Welcome_View()
+    WelcomeView(selectedTab: .constant(9))
 }

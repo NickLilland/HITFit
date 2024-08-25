@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
             TabView{
                 Welcome_View() //was Text("Welcome")
-                ForEach(0..<4) { index in
-                    Exercise_View(index: index)}
+                ForEach (Exercise.exercises.indices, id: \.self) { index in
+                }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }

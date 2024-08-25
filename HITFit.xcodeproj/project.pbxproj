@@ -23,6 +23,8 @@
 		B8A87BD92C7A726B00AEAD21 /* step-up.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8A87BD52C7A726B00AEAD21 /* step-up.mp4 */; };
 		B8A87BDA2C7A726B00AEAD21 /* sun-salute.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8A87BD62C7A726B00AEAD21 /* sun-salute.mp4 */; };
 		B8A87BDB2C7A726B00AEAD21 /* squat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B8A87BD72C7A726B00AEAD21 /* squat.mp4 */; };
+		B8B470F02C7BB5AF0064B5EC /* History Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B470EF2C7BB5AF0064B5EC /* History Store.swift */; };
+		B8B470F32C7BB8310064B5EC /* HistoryStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B470F22C7BB8310064B5EC /* HistoryStoreDevData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		B8A87BD52C7A726B00AEAD21 /* step-up.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "step-up.mp4"; sourceTree = "<group>"; };
 		B8A87BD62C7A726B00AEAD21 /* sun-salute.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sun-salute.mp4"; sourceTree = "<group>"; };
 		B8A87BD72C7A726B00AEAD21 /* squat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = squat.mp4; sourceTree = "<group>"; };
+		B8B470EF2C7BB5AF0064B5EC /* History Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History Store.swift"; sourceTree = "<group>"; };
+		B8B470F22C7BB8310064B5EC /* HistoryStoreDevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStoreDevData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		B8773F5D2C76CAD10058AC6F = {
 			isa = PBXGroup;
 			children = (
+				B8B470EF2C7BB5AF0064B5EC /* History Store.swift */,
 				B802AB6D2C7BAC52004E7FD6 /* DateExtension.swift */,
 				B8773F682C76CAD20058AC6F /* HITFit */,
 				B8773F672C76CAD20058AC6F /* Products */,
@@ -93,6 +98,7 @@
 				B8A87BD52C7A726B00AEAD21 /* step-up.mp4 */,
 				B8A87BD62C7A726B00AEAD21 /* sun-salute.mp4 */,
 				B8773F702C76CAD20058AC6F /* Preview Assets.xcassets */,
+				B8B470F22C7BB8310064B5EC /* HistoryStoreDevData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B470F32C7BB8310064B5EC /* HistoryStoreDevData.swift in Sources */,
 				B83E62EC2C7A92E00010C414 /* HeaderView.swift in Sources */,
 				B802AB6E2C7BAC52004E7FD6 /* DateExtension.swift in Sources */,
 				B8773F6C2C76CAD20058AC6F /* ContentView.swift in Sources */,
@@ -192,6 +199,7 @@
 				B8773F6A2C76CAD20058AC6F /* HITFitApp.swift in Sources */,
 				B8A87BD02C7A715800AEAD21 /* Welcome View.swift in Sources */,
 				B83E62EE2C7AAF060010C414 /* Exercise.swift in Sources */,
+				B8B470F02C7BB5AF0064B5EC /* History Store.swift in Sources */,
 				B83E62F02C7AC57D0010C414 /* RatingView.swift in Sources */,
 				B802AB6C2C7B6E96004E7FD6 /* HistoryView.swift in Sources */,
 				B83E62F22C7AC7CF0010C414 /* VideoPlayerView.swift in Sources */,

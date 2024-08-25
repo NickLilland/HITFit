@@ -7,35 +7,38 @@
 
 import SwiftUI
 
-let today = Date()
-let yesterday = Date().addingTimeInterval(-86400)
+//let today = Date()
+//let yesterday = Date().addingTimeInterval(-86400)
+//
+//let exercise1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
+//let exercise2 = ["Squat", "Step Up", "Burpee"]
 
-let exercise1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
-let exercise2 = ["Squat", "Step Up", "Burpee"]
+let history = HistoryStore()
 
 struct HistoryView: View {
     var body: some View {
-        VStack {
-            Text("History")
-                .font(.title)
-                .padding()
-            Form {
-                Section(
-                    header:
-                        Text(today.formatted(as: "MMM d"))
-                        .font(.headline)) {
-                            ForEach(exercise1, id: \.self) {exercise in
-                                Text(exercise)
-                            }
-                        }
-                Section(
-                    header:
-                        Text(yesterday.formatted(as: "MMM d"))
-                        .font(.headline)) {
-                            ForEach(exercise2, id: \.self) { exercise in
-                                Text(exercise)
-                            }
-                        }
+        ZStack(alignment: .topTrailing) {
+            Button(action: {}) {
+                Image(systemName: "xmark.circle")
+                    .font(.title)
+                    .padding(.trailing)
+            }
+            VStack {
+                Text("History")
+                    .font(.title)
+                    .padding()
+                Form {
+                    ForEach(history.exerciseDays) { day in
+                        Section(
+                            header:
+                                Text(day.date.formatted(as: "MMM dd"))
+                                .font(.headline)) {
+                                    ForEach(day.exercises, id: \.self) { exercise in
+                                        Text(exercise)
+                                    }
+                                }
+                    }
+                }
             }
         }
     }

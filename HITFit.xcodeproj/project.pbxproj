@@ -98,10 +98,10 @@
 		B8773F6F2C76CAD20058AC6F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B8A87BD62C7A726B00AEAD21 /* sun-salute.mp4 */,
 				B8A87BD42C7A726B00AEAD21 /* burpee.mp4 */,
 				B8A87BD72C7A726B00AEAD21 /* squat.mp4 */,
 				B8A87BD52C7A726B00AEAD21 /* step-up.mp4 */,
-				B8A87BD62C7A726B00AEAD21 /* sun-salute.mp4 */,
 				B8773F702C76CAD20058AC6F /* Preview Assets.xcassets */,
 				B8B470F22C7BB8310064B5EC /* HistoryStoreDevData.swift */,
 			);

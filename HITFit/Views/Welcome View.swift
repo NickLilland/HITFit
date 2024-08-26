@@ -39,8 +39,6 @@ struct WelcomeView: View {
                         .clipShape(Circle())
                 }
                 Button(action: { selectedTab = 0 }) {
-                    //                    Text("Get Started")
-                    //                    Image(systemName: "arrow.right.circle")
                     Label("Get Started", systemImage: "arrow.right.circle")
                 }
                 .font(.title2)

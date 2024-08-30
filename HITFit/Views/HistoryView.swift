@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    let history = HistoryStore()
+    @EnvironmentObject var history: HistoryStore
     @Binding var showHistory: Bool
     @Environment(\.dismiss) var dismiss
 
@@ -44,4 +44,5 @@ struct HistoryView: View {
 
 #Preview {
     HistoryView(showHistory: .constant(true))
+        .environmentObject(HistoryStore())
 }

@@ -15,11 +15,12 @@ struct Exercise_View: View {
     @State private var rating = 0
     @State private var showHistory = false
     @State private var showSuccess = false
-
-    //declared "index" is an integer
-    let index: Int
     @State private var timerDone = false
     @State private var showTimer = false
+
+    @EnvironmentObject var history: HistoryStore
+
+    let index: Int
 
     var exercise: Exercise {
         Exercise.exercises[index]
@@ -33,7 +34,8 @@ struct Exercise_View: View {
         }
     }
     var doneButton: some View {
-        Button("Done") {
+        Button("Done"){
+            history.addDoneExercise(Exercise.exercises[index].exerciseName)
             timerDone = false
             showTimer.toggle()
             if lastExercise {
@@ -87,6 +89,7 @@ struct Exercise_View: View {
 }
 
 #Preview {
-    Exercise_View(selectedTab: .constant(3), index: 3)
+    Exercise_View(selectedTab: .constant(0), index: 0)
+        .environmentObject(HistoryStore())
 }
 

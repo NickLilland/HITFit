@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-//let today = Date()
-//let yesterday = Date().addingTimeInterval(-86400)
-//
-//let exercise1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
-//let exercise2 = ["Squat", "Step Up", "Burpee"]
-
 struct HistoryView: View {
     let history = HistoryStore()
     @Binding var showHistory: Bool

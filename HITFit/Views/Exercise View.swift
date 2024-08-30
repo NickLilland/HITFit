@@ -18,7 +18,8 @@ struct Exercise_View: View {
 
     //declared "index" is an integer
     let index: Int
-    let interval: TimeInterval = 30
+    @State private var timerDone = false
+    @State private var showTimer = false
 
     var exercise: Exercise {
         Exercise.exercises[index]
@@ -27,10 +28,14 @@ struct Exercise_View: View {
         index + 1 == Exercise.exercises.count
     }
     var startButton: some View {
-        Button("Start Exercise") {}
+        Button("Start Exercise") {
+            showTimer.toggle()
+        }
     }
     var doneButton: some View {
         Button("Done") {
+            timerDone = false
+            showTimer.toggle()
             if lastExercise {
                 showSuccess.toggle()
             } else {
@@ -46,12 +51,12 @@ struct Exercise_View: View {
                 HeaderView(selectedTab: $selectedTab, titleText: Exercise.exercises[index].exerciseName)
                     .padding(.bottom)
                 VideoPlayerView(videoName: exercise.videoName)
-                  .frame(height: geometry.size.height * 0.45)
-                Text(Date().addingTimeInterval(interval), style: .timer)
-                    .font(.system(size: geometry.size.height * 0.07))
+                    .frame(height: geometry.size.height * 0.45)
+
                 HStack(spacing: 150) {
                     startButton
                     doneButton
+                        .disabled(!timerDone)
                         .sheet(isPresented: $showSuccess) {
                             SuccessView(selectedTab: $selectedTab)
                                 .presentationDetents([.medium, .large])
@@ -59,16 +64,23 @@ struct Exercise_View: View {
                 }
                 .font(.title3)
                 .padding()
+
+
+                if showTimer {
+                    TimerView(
+                        timerDone: $timerDone,
+                        size: geometry.size.height * 0.07)
+                }
+                Spacer()
                 RatingView(rating: $rating )
                     .padding()
-                Spacer()
                 Button("History") {
                     showHistory.toggle()
                 }
                 .sheet(isPresented: $showHistory) {
                     HistoryView(showHistory: $showHistory)
                 }
-                    .padding(.bottom)
+                .padding(.bottom)
             }
         }
     }

@@ -11,6 +11,7 @@ import AVKit
 struct Exercise_View: View {
 
     @Binding var selectedTab: Int
+    @Binding var history: HistoryStore
 
     @State private var rating = 0
     @State private var showHistory = false
@@ -18,7 +19,7 @@ struct Exercise_View: View {
     @State private var timerDone = false
     @State private var showTimer = false
 
-    @EnvironmentObject var history: HistoryStore
+//    @EnvironmentObject var history: HistoryStore
 
     let index: Int
 
@@ -80,7 +81,7 @@ struct Exercise_View: View {
                     showHistory.toggle()
                 }
                 .sheet(isPresented: $showHistory) {
-                    HistoryView(showHistory: $showHistory)
+                    HistoryView(history: history, showHistory: $showHistory)
                 }
                 .padding(.bottom)
             }
@@ -88,8 +89,8 @@ struct Exercise_View: View {
     }
 }
 
-#Preview {
-    Exercise_View(selectedTab: .constant(0), index: 0)
-        .environmentObject(HistoryStore())
-}
+//#Preview {
+//    Exercise_View(selectedTab: .constant(0), index: 0)
+//        .environmentObject(HistoryStore())
+//}
 

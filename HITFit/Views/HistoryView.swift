@@ -10,10 +10,12 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @EnvironmentObject var history: HistoryStore
+    
     @Binding var showHistory: Bool
+    
+    @EnvironmentObject var history: HistoryStore
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
             // swiftlint:disable:next multiple_closures_with_trailing_closure
@@ -22,7 +24,7 @@ struct HistoryView: View {
             }
             .font(.title)
             .padding()
-
+            
             VStack {
                 Text("History")
                     .font(.title)

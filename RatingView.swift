@@ -9,26 +9,27 @@ import SwiftUI
 
 struct RatingView: View {
 
-    let exerciseIndex: Int
-
     @AppStorage("ratings") private var ratings = ""
 
     @State private var rating = 0
 
+    let exerciseIndex: Int
     let maximumRating = 5
-    let onColor = Color.red
+    let onColor = Color("ratings")
     let offColor = Color.gray
-
-
 
     init(exerciseIndex: Int) {
         self.exerciseIndex = exerciseIndex
         let desiredLength = Exercise.exercises.count
         if ratings.count < desiredLength {
-            ratings = ratings.padding(toLength: desiredLength, withPad: "0", startingAt: 0)
+            ratings = ratings.padding(
+                toLength: desiredLength,
+                withPad: "0",
+                startingAt: 0)
         }
     }
 
+    // swiftlint:disable:next strict_fileprivate
     fileprivate func convertRating() {
         let index = ratings.index(
             ratings.startIndex,
@@ -36,22 +37,25 @@ struct RatingView: View {
         let character = ratings[index]
         rating = character.wholeNumberValue ?? 0
     }
-    
+
     var body: some View {
         HStack {
             ForEach(1 ..< maximumRating + 1, id: \.self) { index in
-                Image(systemName: "waveform.path.ecg")
-                    .foregroundColor(
-                        index > rating ? offColor : onColor)
-                    .onTapGesture {
-                        updateRating(index: index)
-                    }
-                    .onAppear {
-                        convertRating()
-                    }
-                    .onChange(of: ratings) { _ in
-                        convertRating()
-                    }
+                Button(action: {
+                    updateRating(index: index)
+                }, label: {
+                    Image(systemName: "waveform.path.ecg")
+                        .foregroundColor(
+                            index > rating ? offColor : onColor)
+                        .font(.body)
+                })
+                .buttonStyle(EmbossedButtonStyle(buttonShape: .round))
+                .onChange(of: ratings) { _ in
+                    convertRating()
+                }
+                .onAppear {
+                    convertRating()
+                }
             }
         }
         .font(.largeTitle)
@@ -74,3 +78,4 @@ struct RatingView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
+

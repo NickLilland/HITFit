@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CountdownView: View {
-    let date: Date
+
     @Binding var timeRemaining: Int
+    
+    let date: Date
     let size: Double
 
     var body: some View {
@@ -33,8 +35,7 @@ struct TimerView: View {
                 minimumInterval: 1.0,
                 paused: timeRemaining <= 0)) { context in
                     CountdownView(
-                        date: context.date,
-                        timeRemaining: $timeRemaining,
+                        timeRemaining: $timeRemaining, date: context.date,
                         size: size)
                 }
                 .onChange(of: timeRemaining) { _ in
@@ -42,12 +43,6 @@ struct TimerView: View {
                         timerDone = true
                     }
                 }
-            }
-}
-
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView(timerDone: .constant(false), size: 90)
     }
 }
 

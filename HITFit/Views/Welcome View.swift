@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
-
-    let history: HistoryStore
-
-    @Binding var selectedTab: Int
-
     @State private var showHistory = false
+    @Binding var selectedTab: Int
 
     var body: some View {
         ZStack {
@@ -24,10 +20,11 @@ struct WelcomeView: View {
                     showHistory.toggle()
                 }
                 .sheet(isPresented: $showHistory) {
-                    HistoryView(history: history, showHistory: $showHistory)
+                    HistoryView(showHistory: $showHistory)
                 }
-                    .padding(.bottom)
+                .padding(.bottom)
             }
+
             VStack {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
@@ -40,8 +37,10 @@ struct WelcomeView: View {
                         .resizedToFill(width: 240, height: 240)
                         .clipShape(Circle())
                 }
+                // swiftlint:disable:next multiple_closures_with_trailing_closure
                 Button(action: { selectedTab = 0 }) {
-                    Label("Get Started", systemImage: "arrow.right.circle")
+                    Text("Get Started")
+                    Image(systemName: "arrow.right.circle")
                 }
                 .font(.title2)
                 .padding()
@@ -53,6 +52,6 @@ struct WelcomeView: View {
     }
 }
 
-//#Preview {
-//    WelcomeView(selectedTab: .constant(9))
-//}
+#Preview {
+    WelcomeView(selectedTab: .constant(9))
+}

@@ -19,13 +19,7 @@ struct RatingView: View {
     let onColor = Color.red
     let offColor = Color.gray
 
-    func updateRating(index: Int) {
-        rating = index
-        let index = ratings.index(
-            ratings.startIndex,
-            offsetBy: exerciseIndex)
-        ratings.replaceSubrange(index...index, with: String(rating))
-    }
+
 
     init(exerciseIndex: Int) {
         self.exerciseIndex = exerciseIndex
@@ -61,6 +55,14 @@ struct RatingView: View {
             }
         }
         .font(.largeTitle)
+    }
+
+    func updateRating(index: Int) {
+        rating = index
+        let index = ratings.index(
+            ratings.startIndex,
+            offsetBy: exerciseIndex)
+        ratings.replaceSubrange(index...index, with: String(rating))
     }
 }
 

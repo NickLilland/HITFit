@@ -5,23 +5,24 @@
 //  Created by Nick Lilland on 8/25/24.
 //
 
+
+
 import SwiftUI
 
 struct HistoryView: View {
-//    @EnvironmentObject var history: HistoryStore
-    let history: HistoryStore
+    @EnvironmentObject var history: HistoryStore
     @Binding var showHistory: Bool
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            Button(action: {
-                dismiss()
-            }) {
+            // swiftlint:disable:next multiple_closures_with_trailing_closure
+            Button(action: { showHistory.toggle() }) {
                 Image(systemName: "xmark.circle")
-                    .font(.title)
-                    .padding()
             }
+            .font(.title)
+            .padding()
+
             VStack {
                 Text("History")
                     .font(.title)
@@ -30,7 +31,7 @@ struct HistoryView: View {
                     ForEach(history.exerciseDays) { day in
                         Section(
                             header:
-                                Text(day.date.formatted(as: "MMM dd"))
+                                Text(day.date.formatted(as: "MMM d"))
                                 .font(.headline)) {
                                     ForEach(day.exercises, id: \.self) { exercise in
                                         Text(exercise)
@@ -43,7 +44,7 @@ struct HistoryView: View {
     }
 }
 
-//#Preview {
-//    HistoryView(showHistory: .constant(true))
-//        .environmentObject(HistoryStore())
-//}
+#Preview {
+    HistoryView(showHistory: .constant(true))
+        .environmentObject(HistoryStore())
+}

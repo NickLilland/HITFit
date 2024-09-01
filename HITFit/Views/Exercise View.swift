@@ -13,11 +13,11 @@ struct Exercise_View: View {
     @Binding var selectedTab: Int
     @Binding var history: HistoryStore
 
-    @State private var rating = 0
     @State private var showHistory = false
     @State private var showSuccess = false
     @State private var timerDone = false
     @State private var showTimer = false
+//    @AppStorage("rating") private var rating = 0
 
 //    @EnvironmentObject var history: HistoryStore
 
@@ -75,7 +75,7 @@ struct Exercise_View: View {
                         size: geometry.size.height * 0.07)
                 }
                 Spacer()
-                RatingView(rating: $rating )
+                RatingView(exerciseIndex: index)
                     .padding()
                 Button("History") {
                     showHistory.toggle()
